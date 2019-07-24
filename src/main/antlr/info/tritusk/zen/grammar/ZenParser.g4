@@ -200,6 +200,7 @@ zenExpressionPrimary
 
 zenMapEntry
     : zenExpressionAssignment ZEN_COLON zenExpressionAssignment
+    ;
 
 zenLiteral
     : zenLiteralNull // `null`
