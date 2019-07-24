@@ -234,6 +234,7 @@ zenLiteralString
 
 // The bracket handler, e.g. `<item:minecraft:diamond>`
 // We consider bracket handler as a specialized literal here.
+// TODO Is there a better description on allowed tokens inside brakctes?
 zenLiteralBracket
-    : ZEN_LT ZEN_IDENTIFIER* ZEN_GT
+    : ZEN_LT ( ZEN_IDENTIFIER | ZEN_COLON | ZEN_MUL )* ZEN_GT
     ;
