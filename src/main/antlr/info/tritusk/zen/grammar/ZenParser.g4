@@ -193,10 +193,13 @@ zenExpressionPrimary
     : zenLiteral // See below
     | ZEN_IDENTIFIER // Variable reference
     | ZEN_KW_FUNCTION zenParamList ( ZEN_KW_AS zenType )? zenBlock // Anomynous function declaration
-    | ZEN_BRACKET_L zenExpressionAssignment* ZEN_BRACKET_R // Array declaration
-    | ZEN_BRACE_L ( zenExpressionAssignment ( ZEN_COMMA zenExpressionAssignment )* )? ZEN_BRACE_R // Map declaration
+    | ZEN_BRACKET_L ( zenExpressionAssignment ( ZEN_COMMA zenExpressionAssignment )* )? ZEN_BRACKET_R // Array declaration
+    | ZEN_BRACE_L ( zenMapEntry ( ZEN_COMMA zenMapEntry )* )? ZEN_BRACE_R // Map declaration
     | ZEN_PARENTHESIS_L zenExpressionAssignment ZEN_PARENTHESIS_R
     ;
+
+zenMapEntry
+    : zenExpressionAssignment ZEN_COLON zenExpressionAssignment
 
 zenLiteral
     : zenLiteralNull // `null`
