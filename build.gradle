@@ -1,0 +1,20 @@
+apply plugin: 'antlr'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    antlr "org.antlr:antlr4:4.7.2"
+}
+
+generateGrammarSource {
+    def packageName = 'info.tritusk.zen.grammar.generated'
+    maxHeapSize = "1024M"
+    arguments += [ "-package", packageName, "-Xexact-output-dir" ]
+    outputDirectory = new File("src/main/java/" + packageName.replace('.', '/'))
+}
+
+compileJava.dependsOn generateGrammarSource
+
+

@@ -1,0 +1,15 @@
+# You can hide your stuff here
+private
+
+# Don't include generated source code
+src/main/java/info/tritusk/zen/grammar/generated
+
+# IDEA things
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Gradle things
+.gradle
+build
