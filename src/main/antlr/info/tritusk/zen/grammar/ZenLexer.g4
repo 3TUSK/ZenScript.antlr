@@ -35,14 +35,12 @@ fragment ZEN_ESCAPE
     : '\\\'' | '\\"' | '\\\\' | '\\/' | '\\b' | '\\f' | '\\n' | '\\r' | '\\t'
     ;
 
-ZEN_WHITESPACE
-    : ( ' ' | '\t' | '\n' | '\r' )+ -> skip
+ZEN_COMMENT
+    : ( ( '//' | '#' ) ~[\r\n]* '\r'? '\n' | '/*' .*? '*/' ) -> channel(HIDDEN)
     ;
 
-ZEN_COMMENT
-    : '//' .*? '\n'
-    | '#' .*? '\n'
-    | '/*' .*? '*/'
+ZEN_WHITESPACE
+    : ( ' ' | '\t' | '\n' | '\r' )+ -> skip
     ;
 
 ZEN_KW_IMPORT
