@@ -47,7 +47,7 @@ zenStatement
     | zenWhile
     | zenVersion
     | zenVariable
-    | zenExpression ZEN_SEMICOLON
+    | zenExpression? ZEN_SEMICOLON
     ;
 
 zenBlock
