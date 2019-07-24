@@ -55,7 +55,7 @@ zenBlock
     ;
 
 zenReturn
-    : ZEN_KW_RETURN zenExpression ZEN_SEMICOLON
+    : ZEN_KW_RETURN zenExpression? ZEN_SEMICOLON
     ;
 
 zenBreak
