@@ -42,6 +42,7 @@ zenStatement
     : zenBlock
     | zenReturn
     | zenBreak
+    | zenContinue
     | zenIf
     | zenFor
     | zenWhile
@@ -60,6 +61,10 @@ zenReturn
 
 zenBreak
     : ZEN_KW_BREAK ZEN_SEMICOLON
+    ;
+
+zenContinue
+    : ZEN_KW_CONTINUE ZEN_SEMICOLON
     ;
 
 zenIf

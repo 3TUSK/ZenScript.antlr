@@ -83,6 +83,10 @@ ZEN_KW_BREAK
     : 'break'
     ;
 
+ZEN_KW_CONTINUE
+    : 'continue'
+    ;
+
 ZEN_KW_RETURN
     : 'return'
     ;
